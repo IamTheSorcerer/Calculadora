@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        html, body{
+            font-family: Arial, Helvetica, sans-serif;
+           background-image: linear-gradient(to right, rgba(0, 0, 0, 0.747)
+           , rgba(0, 0, 0, 0.568));
+           margin: 0.1px;
+           padding: 0px;
+           height: 100%;
+           min-width: 300px;
+           margin-bottom: 40px;
+           max-height: 50x;
+        }
+        h1{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            margin: auto;
+            padding: 10px;
+            margin-bottom: 3.5em;
+            text-align: center;
+            border-radius: 0px 10px;
+            
+        }
+        div.rt{
+           background-color: black;
+            width: auto;
+            color: orangered;
+            padding: 1px;
+            text-align: center;
+            
+        }
+        div#op{
+            text-align: center;
+        }
+
+        input{
+            background-color: rgb(56, 185, 221);
+            color: white;
+            width: 6.6em;
+            height: 5em;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 2px solid black;
+            
+        }
+
+        input#botao{
+            border-radius: 10px;
+            
+        }
+
+        input#botao:hover{
+            background-color: black;
+            
+        }
+        input:hover{
+            color: red;
+            background-color: white;
+        }
+
+
+        footer{
+            background-color: white;
+            color: black;
+            text-align: center;
+            height: 40px;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>
+    </header>
+   <div id="op">
+       <input type="text" name="slot1" id="cx1"> +
+       <input type="text" name="slot2" id="cx2">
+       <input id="botao" type="button" value="Somar" onclick="somar()">
+   </div>
+    <div class="rt" id="result1">Resultado da Soma</div>
+  
+    <div id="op">
+        <input type="text" name="slot1" id="cx3"> -
+        <input type="text" name="slot2" id="cx4">
+        <input id="botao" type="button" value="Diminuir" onclick="dm()">
+    </div>
+    <div class="rt" id="result2">Resultado de Diminuir</div>
+
+    <div id="op">
+        <input type="text" name="slot1" id="cx5"> /
+        <input type="text" name="slot2" id="cx6">
+        <input id="botao" type="button" value="Divisão" onclick="dv()">
+    </div>
+    <div class="rt" id="result3">Resultado da Divisão</div>
+
+    <div id="op">
+        <input type="text" name="slot1" id="cx7"> X
+        <input type="text" name="slo2" id="cx8">
+        <input id="botao" type="button" value="Multiplicação" onclick="mt()">
+    </div>
+    <div class="rt" id="result4">Resultado da Multiplicação</div>
+
+    <footer><p>Criado por RR</p></footer>
+
+   <script>
+    function somar(){
+        var f1 = window.document.getElementById('cx1')
+        var f2 = window.document.getElementById('cx2')
+        var f = window.document.getElementById('result1')
+        var f1 = Number(cx1.value)
+        var f2 = Number(cx2.value)
+        var f  = f1 + f2
+        result1.innerHTML = `A soma entre ${f1} e ${f2} é ${f}`
+    }
+
+    function dm(){
+         var valordm = window.document.getElementById('cx3')
+         var valordm2 = window.document.getElementById('cx4')
+         resultadodm = window.document.getElementById('result2')
+         valordm = Number(cx3.value)
+         valordm2 = Number(cx4.value)
+        resultadodm = valordm - valordm2
+        result2.innerHTML = `o valor ${valordm} menos ${valordm2} é igual a ${resultadodm}` 
+    }
+
+    function dv(){
+        var valordv = document.getElementById('cx5')
+        var valordv2 = document.getElementById('cx6')
+        var resultadodv = document.getElementById('result3')
+        valordv = Number(cx5.value)
+        valordv2 = Number(cx6.value)
+        resultadodv = valordv / valordv2 
+        result3.innerHTML = `a Divisão ${valordv} e ${valordv2} é igual a ${resultadodv}`
+    }
+    
+    function mt(){
+        var valormt = document.getElementById('cx7')
+        var valormt2 = document.getElementById('cx8')
+        var resultadomt = document.getElementById('result4')
+        valormt = Number(cx7.value)
+        valormt2 = Number(cx8.value)
+        resultadomt = valormt * valormt2
+        result4.innerHTML = `A Multiplicação de ${valormt} e ${valormt2} é igual a ${resultadomt}`
+    }
+   </script>
+</body>
+</html>
